@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/homepage.dart';
 
 void main() => runApp(Netflix());
 
@@ -6,7 +7,7 @@ class Netflix extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 4,
       child: MaterialApp(
         title: "Netflix Clone",
         theme: ThemeData(
@@ -24,7 +25,7 @@ class NetflixTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 4,
       child: Theme(
         data: ThemeData(brightness: Brightness.dark),
         child: Scaffold(
@@ -50,7 +51,7 @@ class NetflixTabBar extends StatelessWidget {
           ),
           body: TabBarView(
             children: <Widget>[
-              Center(child: Text("Page 1"),),
+              HomePage(),
               Center(child: Text("Page 2"),),
               Center(child: Text("Page 3"),),
               Center(child: Text("Page 4"),),
