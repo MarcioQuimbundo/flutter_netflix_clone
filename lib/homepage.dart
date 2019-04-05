@@ -21,7 +21,7 @@ class HomeView extends StatelessWidget {
       child: ListView(
         children: <Widget>[
           Container(
-            height: 380,
+            height: 350,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/starwars1.jpg"),
@@ -33,66 +33,76 @@ class HomeView extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Text("Series", style: topMenuStyle),
-                      Text("Films", style: topMenuStyle),
-                      Text("MyList", style: topMenuStyle),
+                      Container(
+                        height: 50,
+                        width: 50,
+                        child: Image(
+                          image: AssetImage("assets/netflix.png"),
+                        ),
+                      ),
+                      FlatButton(onPressed: () {}, child: Text("Series", style: topMenuStyle)),
+                      FlatButton(onPressed: () {}, child: Text("Films", style: topMenuStyle)),
+                      FlatButton(onPressed: () {}, child: Text("MyList", style: topMenuStyle)),
                     ],
                   ),
-                ),                
+                ),
               ],
             ),
           ),
           Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                FlatButton(
+                  child: Column(
                     children: <Widget>[
-                      FlatButton(
-                        child: Column(
-                          children: <Widget>[
-                            Icon(
-                              Icons.add,
-                              color: Colors.white,
-                              size: 26,
-                            ),
-                            Text(
-                              "My List",
-                              style: bottomMenuStyle,
-                            )
-                          ],
-                        ),
-                        onPressed: () {},
-                      ),
-                      FlatButton(
+                      Icon(
+                        Icons.add,
                         color: Colors.white,
-                        child: Row(
-                          children: <Widget>[
-                            Icon(Icons.play_arrow),
-                            Text("Play")
-                          ],
-                        ),
-                        onPressed: () {},
+                        size: 26,
                       ),
-                      FlatButton(
-                        child: Column(
-                          children: <Widget>[
-                            Icon(
-                              Icons.info,
-                              color: Colors.white,
-                              size: 26,
-                            ),
-                            Text(
-                              "info",
-                              style: bottomMenuStyle,
-                            )
-                          ],
-                        ),
-                        onPressed: () {},
-                      ),
+                      Text(
+                        "My List",
+                        style: bottomMenuStyle,
+                      )
                     ],
                   ),
+                  onPressed: () {},
                 ),
+                FlatButton(
+                  color: Colors.white,
+                  child: Row(
+                    children: <Widget>[Icon(Icons.play_arrow), Text("Play")],
+                  ),
+                  onPressed: () {},
+                ),
+                FlatButton(
+                  child: Column(
+                    children: <Widget>[
+                      Icon(
+                        Icons.info,
+                        color: Colors.white,
+                        size: 26,
+                      ),
+                      Text(
+                        "info",
+                        style: bottomMenuStyle,
+                      )
+                    ],
+                  ),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
+}
+
+Widget makePopularWidget() {
+  return Container(
+    
+  );
 }
