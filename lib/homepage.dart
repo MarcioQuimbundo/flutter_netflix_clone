@@ -111,7 +111,8 @@ class HomeView extends StatelessWidget {
             ),
             makePopularWidget("Popular on Netflix"),
             makePopularWidget("Trending Now"),
-            makeContinueWatching("Continue Watching for Kalle")
+            makeContinueWatching("Continue Watching for Kalle"),
+            bannerMovie()
           ],
         ),
       ),
@@ -238,4 +239,69 @@ List<Widget> makeContinueContainers() {
     }
   }
   return movieList;
+}
+
+Widget bannerMovie() {
+  return Container(
+    child: Column(
+      children: <Widget>[
+        Container(
+            padding: EdgeInsets.only(left: 20),
+            child: Text(
+              "Avalable Now",
+              style: topMenuStyle,
+            )),
+        Container(
+          child: Image(
+            image: AssetImage("assets/birdboxBanner.jpg"),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 5, bottom: 5),
+          color: Colors.black,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              FlatButton(
+                child: Container(
+                  margin: EdgeInsets.only(top: 8, bottom: 8),
+                  width: 120,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.play_arrow, color: Colors.black,),
+                      Text(
+                        "Play",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+                onPressed: () {},
+                color: Colors.white,
+              ),
+              FlatButton(
+                child: Container(
+                  margin: EdgeInsets.only(top: 8, bottom: 8),
+                  width: 120,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons.add, color: Colors.white,),
+                      Text(
+                        "My List",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+                onPressed: () {},
+                color: Color(0xFF664444),
+              )
+            ],
+          ),
+        )
+      ],
+    ),
+  );
 }
