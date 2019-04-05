@@ -10,8 +10,9 @@ class HomePage extends StatelessWidget {
   }
 }
 
+final TextStyle topMenuStyle = TextStyle(fontSize: 12, color: Colors.white);
+
 class HomeView extends StatelessWidget {
-  final TextStyle topMenuStyle = TextStyle(fontSize: 12, color: Colors.white);
   final TextStyle bottomMenuStyle =
       TextStyle(fontSize: 12, color: Colors.white);
 
@@ -95,6 +96,7 @@ class HomeView extends StatelessWidget {
               ],
             ),
           ),
+          makePopularWidget(),
         ],
       ),
     );
@@ -103,6 +105,38 @@ class HomeView extends StatelessWidget {
 
 Widget makePopularWidget() {
   return Container(
-    
+    height: 150,
+    child: Column(
+      children: <Widget>[
+        Text("Popular on Netflix", style: topMenuStyle),
+        Container(
+          height: 100,
+          child: ListView(
+            padding: EdgeInsets.all(3),
+            scrollDirection: Axis.horizontal,
+            children: makeContainers(),
+          ),
+        )
+      ],
+    ),
   );
+}
+
+List<Widget> makeContainers(){
+  List<Container> movieList = [];
+  for (var i = 0; i < 10; i++) {
+    Color color;
+    if (i % 2 == 0) {
+      color = Color(0xFFD11919);
+    } else {
+      color = Color(0xFF1CC413);
+    }
+    movieList.add(Container(
+        color: color,
+        height: 300,
+        width: 120,
+        margin: EdgeInsets.all(3),
+    ));
+  }
+  return movieList;
 }
