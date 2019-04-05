@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             Container(
-              height: 350,
+              height: 310,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("assets/starwars1.jpg"),
@@ -56,6 +56,9 @@ class HomeView extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Center(
               child: Row(
@@ -112,6 +115,14 @@ class HomeView extends StatelessWidget {
             makePopularWidget("Popular on Netflix"),
             makePopularWidget("Trending Now"),
             makeContinueWatching("Continue Watching for Kalle"),
+            makePopularWidget("NETFLIX ORIGINALS >"),
+            makePopularWidget("Watch It Again"),
+            makePopularWidget("New Releases"),
+            makePopularWidget("US Crime TV Programmes"),
+            makePopularWidget("Comedies"),
+            makePopularWidget("Romance Programmes"),
+            makePopularWidget("Documentaries"),
+            makePopularWidget("US TV Dramas"),
             bannerMovie()
           ],
         ),
@@ -176,9 +187,11 @@ List<Widget> makeContainers() {
   for (var i = 0; i < 6; i++) {
     counter++;
     movieList.add(Container(
-      width: 120,
+      padding: EdgeInsets.only(left: 5, right: 10),
+      width: 130,
       child: Image(
         image: AssetImage("assets/" + counter.toString() + ".jpg"),
+        fit: BoxFit.fitHeight,
       ),
     ));
     if (counter == 12) {
@@ -195,11 +208,12 @@ List<Widget> makeContinueContainers() {
     movieList.add(Container(
       padding: EdgeInsets.all(5),
       height: 200,
+      width: 120,
       child: Column(
         children: <Widget>[
           Container(
             height: 140,
-            width: 100,
+            width: 120,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/" + counter.toString() + ".jpg"),
@@ -214,16 +228,16 @@ List<Widget> makeContinueContainers() {
             ),
           ),
           Container(
+            width: 110,
             height: 30,
-            margin: EdgeInsets.all(3),
-            padding: EdgeInsets.only(left: 10, right: 10),
+            margin: EdgeInsets.only(top: 3),
             decoration: BoxDecoration(
-                color: Colors.black, borderRadius: BorderRadius.circular(6)),
+                color: Colors.black, borderRadius: BorderRadius.circular(2)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
-                    padding: EdgeInsets.only(right: 25), child: Text("51:10")),
+                    padding: EdgeInsets.only(right: 25), child: Text("S1:E3")),
                 Icon(
                   Icons.info,
                   size: 15,
@@ -269,7 +283,10 @@ Widget bannerMovie() {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Icon(Icons.play_arrow, color: Colors.black,),
+                      Icon(
+                        Icons.play_arrow,
+                        color: Colors.black,
+                      ),
                       Text(
                         "Play",
                         style: TextStyle(color: Colors.black),
@@ -287,7 +304,10 @@ Widget bannerMovie() {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Icon(Icons.add, color: Colors.white,),
+                      Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
                       Text(
                         "My List",
                         style: TextStyle(color: Colors.white),
