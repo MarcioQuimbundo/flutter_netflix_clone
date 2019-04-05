@@ -4,9 +4,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.black
-      ),
+      theme: ThemeData(primaryColor: Colors.black),
       home: HomeView(),
     );
   }
@@ -14,20 +12,24 @@ class HomePage extends StatelessWidget {
 
 class HomeView extends StatelessWidget {
   final TextStyle topMenuStyle = TextStyle(fontSize: 12, color: Colors.white);
+  final TextStyle bottomMenuStyle =
+      TextStyle(fontSize: 12, color: Colors.white);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red,
       child: ListView(
         children: <Widget>[
           Container(
-            height: 430,
-            color: Colors.blue,
+            height: 380,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/starwars1.jpg"),
+                    fit: BoxFit.fill)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Center(
+                Container(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -36,19 +38,29 @@ class HomeView extends StatelessWidget {
                       Text("MyList", style: topMenuStyle),
                     ],
                   ),
-                ),
-                Center(
+                ),                
+              ],
+            ),
+          ),
+          Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[                      
+                    children: <Widget>[
                       FlatButton(
                         child: Column(
                           children: <Widget>[
-                            Icon(Icons.add,  color: Colors.white, size: 26,),
-                            Text("My List")
+                            Icon(
+                              Icons.add,
+                              color: Colors.white,
+                              size: 26,
+                            ),
+                            Text(
+                              "My List",
+                              style: bottomMenuStyle,
+                            )
                           ],
                         ),
-                        onPressed: (){},
+                        onPressed: () {},
                       ),
                       FlatButton(
                         color: Colors.white,
@@ -58,23 +70,27 @@ class HomeView extends StatelessWidget {
                             Text("Play")
                           ],
                         ),
-                        onPressed: (){},
+                        onPressed: () {},
                       ),
                       FlatButton(
                         child: Column(
                           children: <Widget>[
-                            Icon(Icons.info, color: Colors.white, size: 26,),
-                            Text("info")
+                            Icon(
+                              Icons.info,
+                              color: Colors.white,
+                              size: 26,
+                            ),
+                            Text(
+                              "info",
+                              style: bottomMenuStyle,
+                            )
                           ],
                         ),
-                        onPressed: (){},
+                        onPressed: () {},
                       ),
                     ],
                   ),
-                )
-              ],
-            ),
-          )
+                ),
         ],
       ),
     );
