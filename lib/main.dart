@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/src/ui/ui.dart';
 
-void main() => runApp(Netflix());
+void main() => runApp(MaterialApp(home: SplashScreen(), routes: <String, WidgetBuilder>{
+      '/NetFlix': (BuildContext context) => Netflix()
+    },) );
+
 
 class Netflix extends StatelessWidget {
   @override
