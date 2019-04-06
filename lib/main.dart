@@ -60,7 +60,7 @@ class NetflixTabBar extends StatelessWidget {
             children: <Widget>[
               HomePage(),
               SearchPage(),
-              Center(child: Text("Page 3"),),
+              DownloadPage(),
               Center(child: Text("Page 4"),),
             ],
           ),
