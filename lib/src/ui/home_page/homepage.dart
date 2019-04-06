@@ -115,6 +115,7 @@ class HomeView extends StatelessWidget {
             makePopularWidget("Popular on Netflix"),
             makePopularWidget("Trending Now"),
             makeContinueWatching("Continue Watching for Kalle"),
+            bannerMovie(),
             makePopularWidget("NETFLIX ORIGINALS >"),
             makePopularWidget("Watch It Again"),
             makePopularWidget("New Releases"),
@@ -123,7 +124,6 @@ class HomeView extends StatelessWidget {
             makePopularWidget("Romance Programmes"),
             makePopularWidget("Documentaries"),
             makePopularWidget("US TV Dramas"),
-            bannerMovie()
           ],
         ),
       ),
