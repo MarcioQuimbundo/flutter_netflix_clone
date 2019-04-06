@@ -136,6 +136,10 @@ class MoreView extends StatelessWidget {
               padding: EdgeInsets.all(10),
               child: Text("Privacy", style: TextStyle(color: Colors.grey),),
             ),
+            Container(
+              padding: EdgeInsets.all(10),
+              child: Text("Sign Out", style: TextStyle(color: Colors.grey),),
+            ),
           ],
         ),
       ),
@@ -168,7 +172,7 @@ int counterProfile = 0;
 Color color;
 List<Widget> makeContainersProfile() {
   List<Container> profileList = [];
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 5; i++) {
     counterProfile++;
     if (i % 2 == 0) {
       color = Colors.red;
@@ -176,7 +180,7 @@ List<Widget> makeContainersProfile() {
       color = Colors.blue;
     }
 
-    if (i == 3) {
+    if (i == 4) {
       profileList.add(
         Container(
           margin: EdgeInsets.only(right: 10),

@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
-final TextStyle topMenuStyle = TextStyle(fontSize: 12, color: Colors.white);
+final TextStyle topMenuStyle = TextStyle(fontSize: 14, color: Colors.white, fontWeight: FontWeight.bold);
 
 class HomeView extends StatelessWidget {
   final TextStyle bottomMenuStyle =
@@ -23,10 +23,10 @@ class HomeView extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             Container(
-              height: 310,
+              height: 500,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/starwars1.jpg"),
+                      image: AssetImage("assets/avangers.jpg"), 
                       fit: BoxFit.fill)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -265,6 +265,7 @@ Widget bannerMovie() {
               "Avalable Now",
               style: topMenuStyle,
             )),
+            SizedBox(height: 10),
         Container(
           child: Image(
             image: AssetImage("assets/birdboxBanner.jpg"),
