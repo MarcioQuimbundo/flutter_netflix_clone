@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:netflix_clone/main.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

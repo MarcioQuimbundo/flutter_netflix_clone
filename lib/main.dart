@@ -32,25 +32,29 @@ class NetflixTabBar extends StatelessWidget {
       child: Theme(
         data: ThemeData(brightness: Brightness.dark),
         child: Scaffold(
-          bottomNavigationBar: TabBar(
-            tabs: <Widget>[
-              Tab(icon: Icon(Icons.home), text: "Home"),
-              Tab(
-                icon: Icon(Icons.search),
-                text: "Search",
-              ),
-              Tab(
-                icon: Icon(Icons.file_download),
-                text: "Downloads",
-              ),
-              Tab(
-                icon: Icon(Icons.list),
-                text: "More",
-              ),
-            ],
-            unselectedLabelColor: Color(0xFF999999),
-            labelColor: Colors.white,
-            indicatorColor: Colors.transparent,
+          bottomNavigationBar: Container(
+            color: Colors.black,
+            height: 60,
+            child: TabBar(
+              tabs: <Widget>[
+                Tab(icon: Icon(Icons.home), text: "Home"),
+                Tab(
+                  icon: Icon(Icons.search),
+                  text: "Search",
+                ),
+                Tab(
+                  icon: Icon(Icons.file_download),
+                  text: "Downloads",
+                ),
+                Tab(
+                  icon: Icon(Icons.list),
+                  text: "More",
+                ),
+              ],
+              unselectedLabelColor: Color(0xFF999999),
+              labelColor: Colors.white,
+              indicatorColor: Colors.transparent,
+            ),
           ),
           body: TabBarView(
             children: <Widget>[

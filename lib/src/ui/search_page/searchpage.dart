@@ -13,8 +13,6 @@ class SearchPage extends StatelessWidget {
 final TextStyle topSearchStyle = TextStyle(fontSize: 12, color: Colors.white);
 
 class SearchView extends StatelessWidget {
-  final TextStyle bottomMenuStyle =
-      TextStyle(fontSize: 12, color: Colors.white);
 
   @override
   Widget build(BuildContext context) {
